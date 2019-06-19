@@ -11,7 +11,7 @@ int main(void)
 {
 	char charVar;
 	int intVar;
-	long int longintVAr;
+	long int longintVar;
 	long long int longlongintVar;
 	float floatVar;
 
