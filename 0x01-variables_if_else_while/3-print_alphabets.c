@@ -4,7 +4,7 @@
 /* more headers goes there */
 
 /**
- * main - This only prints the last digit of n
+ * main - This only prints the alphabet
  *
  * Return: 0 if all is ok
  */
@@ -15,11 +15,12 @@ int main(void)
 
 	for (i = 97; i < 123; i++)
 	{
-		if (!(i == 'e' || i == 'q'))
-		{
-			putchar(i);
-			putchar('\n');
-		}
+		putchar(i);
 	}
+	for (i = 65; i < 91; i++)
+	{
+		putchar(i);
+	}
+	putchar('\n');
 	return (0);
 }
