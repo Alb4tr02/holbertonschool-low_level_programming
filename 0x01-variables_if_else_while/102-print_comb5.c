@@ -11,8 +11,9 @@
 
 int main(void)
 {
-int i, j, k, l, a, b = 0;
+int i, j, k, l, a, b;
 
+i = j = k = l = a = b = 0;
 for (; i < 10; i++)
 {
 	j = 0;
