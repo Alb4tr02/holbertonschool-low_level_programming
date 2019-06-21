@@ -24,17 +24,17 @@ int main(void)
 			k = j + 1;
 			for (; k < 58; k++)
 			{
-                if (!((j == k) || (j == i) || (k == i)))
-                {
-                    putchar(i);
-                    putchar(j);
-                    putchar(k);
-                    if (!((i == '7') && (j == '8') && (k == '9')))
-                    {
-                        putchar(',');
-                        putchar(' ');
-                    }
-                }
+				if (!((j == k) || (j == i) || (k == i)))
+				{
+					putchar(i);
+					putchar(j);
+					putchar(k);
+					if (!((i == '7') && (j == '8') && (k == '9')))
+					{
+						putchar(',');
+						putchar(' ');
+					}
+				}
 			}
 		}
 	}
