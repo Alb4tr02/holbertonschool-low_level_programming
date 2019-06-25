@@ -20,13 +20,13 @@ int main(void)
 	b = 0;
 	sum = 0;
 	mod = 2;
-	do{
+	do {
 		res = a + b;
 		if ((res < 4000000) && (res % mod == 0))
 			sum  = sum + res;
 		b = a;
 		a = res;
-	}while (res < 4000000);
+	} while (res < 4000000);
 	printf("%ld\n", sum);
 	return (0);
 }
