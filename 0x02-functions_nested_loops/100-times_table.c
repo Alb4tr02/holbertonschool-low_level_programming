@@ -27,11 +27,8 @@ void print_times_table(int n)
 				t = 0;
 				aux = res;
 				aux2 = 10;
-				while (aux != 0)
-				{
+				for (; aux > 0; t++)
 					aux = aux / 10;
-					t++;
-				}
 				for (; t > 1; t--)
 				{
 					aux1 = t - 3;
@@ -43,6 +40,9 @@ void print_times_table(int n)
 					aux2 = 10;
 				}
 				_putchar(res + '0');
+				if (j != n)
+					_putchar(',');
+
 			}
 			_putchar('\n');
 		}
