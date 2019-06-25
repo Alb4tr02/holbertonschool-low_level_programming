@@ -1,4 +1,3 @@
-#include <unistd.h>
 #include "holberton.h"
 
 /**
@@ -10,7 +9,6 @@
 void print_alphabet(void)
 {
 	char letter;
-	char nwline;
 
 	for (letter = 'a'; letter <= 'z'; letter++)
 	{
