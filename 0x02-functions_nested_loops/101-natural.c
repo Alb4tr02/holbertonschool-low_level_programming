@@ -1,4 +1,3 @@
-#include <unistd.h>
 #include "holberton.h"
 #include <stdio.h>
 /**
@@ -6,7 +5,7 @@
  *
  */
 
-void main(void)
+int main(void)
 {
 	int i;
 	int res;
@@ -25,4 +24,3 @@ void main(void)
 	printf("%d", res);
 	return (0);
 }
-
