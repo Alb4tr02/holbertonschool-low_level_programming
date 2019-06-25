@@ -6,8 +6,6 @@
 
 int main(void)
 {
-	int i;
-
 	long int a;
 	long int b;
 	long int res;
