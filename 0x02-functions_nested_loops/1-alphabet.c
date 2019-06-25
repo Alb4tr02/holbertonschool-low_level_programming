@@ -12,10 +12,9 @@ void print_alphabet(void)
 	char letter;
 	char nwline;
 
-	nwline = '\n';
 	for (letter = 'a'; letter <= 'z'; letter++)
 	{
-		write(1, &letter, 1);
+		_putchar(letter);
 	}
-	write(1, &nwline, 1);
+	_putchar('\n');
 }
