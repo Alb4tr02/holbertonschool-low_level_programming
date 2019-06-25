@@ -1,4 +1,3 @@
-#include "holberton.h"
 #include <stdio.h>
 /**
  * main - function that prints the first 50 numbers of fibbonacci.
