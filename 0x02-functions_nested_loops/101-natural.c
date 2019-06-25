@@ -2,7 +2,7 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * print_times_table - function that prints the n times table, starting with 0.
+ * main - function that prints the sum.
  *
  */
 
