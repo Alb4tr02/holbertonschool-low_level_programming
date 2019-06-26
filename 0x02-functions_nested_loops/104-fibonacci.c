@@ -16,7 +16,7 @@ int main(void)
 
 	a1 = 1;
 	b1 = 0;
-	for (i = 0; i < 98; i++)
+	for (i = 0; i <= 98; i++)
 	{
 		if (i < 91)
 		{
