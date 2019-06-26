@@ -1,0 +1,50 @@
+#include <unistd.h>
+#include "holberton.h"
+#include <stdio.h>
+/**
+ * main - function that prints the first 50 numbers of fibbonacci.
+ * Return: 0 if all is okay.
+ */
+
+int main(void)
+{
+	unsigned long int a1, b1, a2, b2;
+	unsigned long int res1 = 0;
+	unsigned long int res2 = 0;
+
+	int i;
+
+	a1 = 1;
+	b1 = 0;
+	for (i = 0; i < 98; i++)
+	{
+		if (i < 91)
+		{
+			res1 = a1  + b1;
+			printf("%ld\n", res1);
+			b1 = a1;
+			a1 = res1;
+		}
+		else
+		{
+			if (i == 91)
+			{
+				a2 = a1 / 100000000;
+				a1 = a1 % 100000000;
+				b2 = b1 / 100000000;
+				b1 = b1 % 100000000;
+			}
+			else
+			{
+				b1 = a1;
+				b2 = a2;
+				a1 = res1;
+				a2 = res2;
+			}
+			res1 = (a1 + b1) % 100000000;
+			res2 = a2 + b2 + ((a1 + b1) / 100000000);
+			printf("%ld%ld\n", res2, res1);
+		}
+	}
+	return (0);
+}
