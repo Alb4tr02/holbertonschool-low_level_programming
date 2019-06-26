@@ -21,6 +21,6 @@ int main(void)
 			res = res + i;
 		}
 	}
-	printf("%d", res);
+	printf("%d\n", res);
 	return (0);
 }
