@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * main - function that prints the sum.
- *
+ * Return: 0 if all is ok.
  */
 
 int main(void)
