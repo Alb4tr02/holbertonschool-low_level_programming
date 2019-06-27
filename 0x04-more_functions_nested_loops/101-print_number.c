@@ -8,7 +8,6 @@
 
 void print_number(int n)
 {
-	int a = 1;
 	int t;
 	int aux;
 	int aux1;
@@ -39,6 +38,4 @@ void print_number(int n)
 		aux2 = 10;
 	}
 	_putchar(n + '0');
-	_putchar('\n');
-	return (0);
 }
