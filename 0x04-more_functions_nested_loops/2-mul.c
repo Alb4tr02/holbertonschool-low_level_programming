@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _isdigit - This only check if the character is a digit
+ * mul - This only check if the character is a digit
  *
  * @a: the numnber to be multiplied
  * @b: the number to be multiplied
@@ -11,5 +11,5 @@
 
 int mul(int a, int b)
 {
-        return ((a*b));
+	return ((a * b));
 }
