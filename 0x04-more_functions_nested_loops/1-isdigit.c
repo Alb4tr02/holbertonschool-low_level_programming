@@ -10,5 +10,5 @@
 
 int _isdigit(int c)
 {
-        return ((c > 47 && c < 58));
+	return ((c > 47 && c < 58));
 }
