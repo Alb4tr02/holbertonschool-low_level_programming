@@ -8,11 +8,11 @@
 
 void print_number(int n)
 {
-	int t;
-	int aux;
+	unsigned int t;
+	unsigned int aux;
 	int aux1;
-	int aux2;
-	int mns = 45;
+	unsigned int aux2;
+	unsigned int mns = 45;
 
 	t = 0;
 	aux =  n > 0 ? n : n * (-1);
