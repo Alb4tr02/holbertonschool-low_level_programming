@@ -10,7 +10,7 @@ void _puts(char *str)
 {
 	int aux = 0;
 
-	for (; *(s + aux) != '\0'; aux++)
-		_putchar(*(s + aux));
-	_puthcar('\n');
+	for (; *(str + aux) != '\0'; aux++)
+		_putchar(*(str + aux));
+	_putchar('\n');
 }
