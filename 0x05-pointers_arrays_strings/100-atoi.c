@@ -8,11 +8,11 @@
 
 int _atoi(char *s)
 {
-	int aux = 0;
-	int stop = 0;
+	unsigned int aux = 0;
+	unsigned int stop = 0;
 	int sign = 1;
-	int n = 0;
-	int inAn = 0;
+	unsigned int n = 0;
+	unsigned int inAn = 0;
 
 	do {
 		if (*(s + aux) == '\0')
