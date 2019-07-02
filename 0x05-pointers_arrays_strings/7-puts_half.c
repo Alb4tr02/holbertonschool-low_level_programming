@@ -13,10 +13,10 @@ void puts_half(char *str)
 
 	for (; *(str + aux) != '\0'; aux++)
 		;
-	if (aux % 2 == 0)
-		aux--;
-	aux2 = (aux / 2) + 1;
-	for (; aux2 <= aux; aux2++)
+	aux2 = aux - (aux / 2);
+	if (aux == 1)
+		aux2 = 0;
+	for (; aux2 <= aux - 1; aux2++)
 		_putchar(*(str + aux2));
 	_putchar('\n');
 }
