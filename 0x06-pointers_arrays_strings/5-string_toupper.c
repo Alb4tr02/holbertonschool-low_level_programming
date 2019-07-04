@@ -3,13 +3,13 @@
 /**
  * string_toupper - This fuction only changes all lowercase letters
  *                   of a string to uppercase.
- * @*:  is the pointer to the array
+ * @s:  is the pointer to the array
  * Return: the poiner to the array
  */
 
 char *string_toupper(char *s)
 {
-       	int b = 0;
+	int b = 0;
 
 	while (*(s + b) != '\0')
 	{
