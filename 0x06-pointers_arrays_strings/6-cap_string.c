@@ -16,6 +16,8 @@ char *cap_string(char *s)
 
 	while (*(s + b) != '\0')
 	{
+		if (s[b] == 9)
+			s[b] = 32;
 		for (i = 0; i < 13; i++)
 			flag = (s[b - 1] == arr[i]) ? 1 : flag;
 		if (s[b] > 96 && s[b] < 123 && (flag == 1))
