@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * leet - This fuction only changes all lowercase letters
+ * rot13 - This fuction only changes all lowercase letters
  *                   of a string to uppercase.
  * @s:  is the pointer to the array
  * Return: the poiner to the array
