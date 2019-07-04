@@ -11,15 +11,15 @@
 
 char *_strncpy(char *dest, char *src, int n)
 {
-       	int aux1 = 0;
+	int aux1 = 0;
 
-        while (*(src + aux1) != '\0' && aux1 < n)
-      	{
+	while (*(src + aux1) != '\0' && aux1 < n)
+	{
 		*(dest + aux1) = *(src + aux1);
 		aux1++;
 	}
 	for ( ; aux1 < n; aux1++)
 		*(dest + aux1) = '\0';
 
-        return (dest);
+	return (dest);
 }
