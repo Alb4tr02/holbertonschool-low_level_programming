@@ -30,6 +30,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			res = (n1[l1] - '0') + (n2[l2] - '0') + car;
 		car  = res / 10;
 		aux = res % 10;
+		if (aux2 == size_r - 1)
+			return (0);
 		for (; pos != 0 && pos < size_r - 1; pos--)
 			r[pos] = r[pos - 1];
 		r[0] = aux + '0';
