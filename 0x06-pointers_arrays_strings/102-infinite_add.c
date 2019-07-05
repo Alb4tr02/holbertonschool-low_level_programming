@@ -47,5 +47,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[0] = car + '0';
 	}
 	r[aux2 + 1] = '\0';
-	return (r);
+	if (r[0] == '0')
+		return ((r + 1));
+	else
+		return (r);
 }
