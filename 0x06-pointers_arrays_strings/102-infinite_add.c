@@ -37,8 +37,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[0] = aux + '0';
 		aux2++;
 		pos = aux2;
-		if (aux2 == size_r - 1)
-			return (0);
 	}
 	if (car > 0)
 	{
