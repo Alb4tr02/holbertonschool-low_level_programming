@@ -32,7 +32,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		aux = res % 10;
 		if (aux2 == size_r - 1)
 			return (0);
-		for (; pos != 0 && pos < size_r - 1; pos--)
+		for (; pos != 0; pos--)
 			r[pos] = r[pos - 1];
 		r[0] = aux + '0';
 		aux2++;
@@ -42,11 +42,10 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	{
 		if (aux2 == size_r - 1)
 			return (0);
-		for (; pos != 0 && pos < size_r - 1; pos--)
+		for (; pos != 0; pos--)
 			r[pos] = r[pos - 1];
 		r[0] = car + '0';
 	}
-	for (aux2 = aux2 + 1; aux2 < size_r; aux2++)
-		r[aux2] = '\0';
+	r[aux2 + 1] = '\0';
 	return (r);
 }
