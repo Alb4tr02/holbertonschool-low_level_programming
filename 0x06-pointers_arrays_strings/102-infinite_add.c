@@ -38,6 +38,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		aux2++;
 		pos = aux2;
 	}
+	if (aux2 == size_r - 1)
+		return (0);
 	if (car > 0)
 	{
 		for (; pos != 0 && pos < size_r - 1; pos--)
