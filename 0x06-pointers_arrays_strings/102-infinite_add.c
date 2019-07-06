@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#include <stdio.h>
 /**
  * infinite_add - This fuction only adds two string-numbers
  * @n1:  is the pointer to the array to sum
@@ -45,7 +45,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		for (; pos != 0; pos--)
 			r[pos] = r[pos - 1];
 		r[0] = car + '0';
+		r[aux2 + 1] = '\0';
+		return (r);
 	}
-	r[aux2 + 1] = '\0';
+	r[aux2] = '\0';
 	return (r);
 }
