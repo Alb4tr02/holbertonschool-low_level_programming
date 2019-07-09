@@ -16,10 +16,9 @@ char *_strchr(char *s, char c)
 	for (; *(s + aux) != '\0'; aux++)
 	{
 		if (*(s + aux) == c)
-		{
-			p = (s + aux);
-			break;
-		}
+			return (s + aux);
 	}
+	if (*(s + aux) == c)
+		return (s + aux);
 	return (p);
 }
