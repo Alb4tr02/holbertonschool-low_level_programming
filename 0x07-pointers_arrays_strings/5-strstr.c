@@ -12,10 +12,14 @@ char *_strstr(char *haystack, char *needle)
 {
 	int aux  = 0;
 	int aux2 = 0;
+	int flag = 0;
 	int aux3;
 
+	if (needle[0] == '\0')
+		return (haystack);
 	for (; *(haystack + aux) != '\0'; aux++)
 	{
+		flag = 0;
 		if (*(haystack + aux) == *(needle + 0))
 		{
 			aux3 = aux;
@@ -27,11 +31,12 @@ char *_strstr(char *haystack, char *needle)
 				if (!(*(haystack + aux) == *(needle + aux2)))
 				{
 					aux--;
+					flag = 1;
 					break;
 				}
-				if (*(needle + aux2 + 1) == '\0')
-					return (haystack + aux3);
 			}
+			if (flag == 0)
+				return (haystack + aux3);
 		}
 	}
 	return (0);
