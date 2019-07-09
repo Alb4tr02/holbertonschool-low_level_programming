@@ -13,7 +13,6 @@ char *_strstr(char *haystack, char *needle)
 	int aux  = 0;
 	int aux2 = 0;
 	int aux3;
-	char *p = NULL;
 
 	for (; *(haystack + aux) != '\0'; aux++)
 	{
@@ -35,5 +34,5 @@ char *_strstr(char *haystack, char *needle)
 			}
 		}
 	}
-	return (p);
+	return (0);
 }
