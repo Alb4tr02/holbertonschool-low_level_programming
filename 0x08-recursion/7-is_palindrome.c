@@ -1,14 +1,14 @@
 #include "holberton.h"
 
 /**
- * _strlen_recursion - This fuction only return the length of a  string
+ * sl - This fuction only return the length of a  string
  * @s:  is the pointer to the string
  * Return: the lenght of the string
  */
 
-int _strlen_recursion(char *s)
+int sl(char *s)
 {
-	return ((*s == 0) ? 0 : (1 + _strlen_recursion((s + 1))));
+	return ((*s == 0) ? 0 : (1 + sl((s + 1))));
 }
 
 /**
@@ -22,7 +22,7 @@ int _strlen_recursion(char *s)
 
 int f1(int l, char *s, int i, int j)
 {
-	if (l == (i + j))
+	if (l == j)
 		return (0);
 	else
 		return ((*(s + l) - *(s + i)) == 0) ?
@@ -38,20 +38,10 @@ int f1(int l, char *s, int i, int j)
 
 int is_palindrome(char *s)
 {
-	if ((_strlen_recursion(s) - 1)  <= 0)
+	if ((sl(s) - 1)  <= 0)
 		return (1);
-	if ((_strlen_recursion(s) - 1) % 2 == 0)
-	{
-		if ((f1((_strlen_recursion(s) - 1), s, 0, 2)) == 0)
-			return (1);
-		else
-			return (0);
-	}
+	if ((f1((sl(s) - 1), s, 0, ((sl(s) - 1) / 2)) == 0))
+		return (1);
 	else
-	{
-		if ((f1((_strlen_recursion(s) - 1), s, 0, 1)) == 0)
-			return (1);
-		else
-			return (0);
-	}
+		return (0);
 }
