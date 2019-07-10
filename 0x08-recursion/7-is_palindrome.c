@@ -38,6 +38,8 @@ int f1(int l, char *s, int i, int j)
 
 int is_palindrome(char *s)
 {
+	if ((_strlen_recursion(s) - 1)  == 0)
+		return (1);
 	if ((_strlen_recursion(s) - 1) % 2 == 0)
 	{
 		if ((f1((_strlen_recursion(s) - 1), s, 0, 2)) == 0)
