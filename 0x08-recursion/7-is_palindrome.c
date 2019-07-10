@@ -25,7 +25,9 @@ int f1(int l, char *s, int i, int j)
 	if (l == (i + j))
 		return (0);
 	else
-		return (((*(s + l) - *(s + i))) + f1((l - 1), s, (i + 1), j));
+		return ((*(s + l) - *(s + i)) == 0) ?
+			0 + f1((l - 1), s, (i + 1), j)
+			: 1 + f1((l - 1), s, (i + 1), j);
 }
 
 /**
