@@ -11,7 +11,7 @@
 int  main(int argc, char *argv[])
 {
 	int cont;
-	int res = 0;
+	unsigned int res = 0;
 
 	if (argc == 1)
 	{
