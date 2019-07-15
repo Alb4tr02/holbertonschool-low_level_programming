@@ -11,6 +11,9 @@ int chg(int c);
  */
 int  main(int argc, char *argv[])
 {
+	int cents;
+	int res;
+
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -21,8 +24,8 @@ int  main(int argc, char *argv[])
 		printf("0\n");
 		return (0);
 	}
-	int cents = atoi(*(argv + 1));
-	int res = chg(cents);
+	cents = atoi(*(argv + 1));
+	res = chg(cents);
 
 	printf("%d\n", res);
 	return (0);
