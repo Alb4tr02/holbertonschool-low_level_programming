@@ -40,6 +40,10 @@ unsigned int chg(unsigned int c)
 {
 	if (c == 0)
 		return (0);
+	if (c % 25 == 0)
+		return ((c / 25));
+	if (c % 10 == 0)
+		return ((c / 10));
 	if (c >= 25)
 		return (1 + chg(c - 25));
 	if (c >= 10)
