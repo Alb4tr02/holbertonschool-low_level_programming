@@ -38,17 +38,40 @@ int  main(int argc, char *argv[])
  */
 int chg(int c)
 {
-	if (c == 0)
-		return (0);
-	if (c % 25 == 0)
-		return (1 + chg(c - 25));
-	if (c % 10 == 0)
-		return (1 + chg(c - 10));
-	if (c % 5 == 0)
-		return (1 + chg(c - 5));
-	if (c % 2 == 0)
-		return (1 + chg(c - 2));
-	if (c % 1 == 0)
-		return (1 + chg(c - 1));
-	return (0);
+	int a = 0;
+
+	while (c)
+	{
+		if (c % 25 == 0)
+		{
+			c -= 25;
+			a++;
+			continue;
+		}
+		if (c % 10 == 0)
+		{
+			c -= 10;
+			a++;
+			continue;
+		}
+		if (c % 5 == 0)
+		{
+			c -= 5;
+			a++;
+			continue;
+		}
+		if (c % 2 == 0)
+		{
+			c -= 2;
+			a++;
+			continue;
+		}
+		if (c % 1 == 0)
+		{
+			c--;
+			a++;
+			continue;
+		}
+	}
+	return (a);
 }
