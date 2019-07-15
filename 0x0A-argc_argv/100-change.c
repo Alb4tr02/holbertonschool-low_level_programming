@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-int chg(int c);
+unsigned int chg(unsigned int c);
 /**
  * main - This fuction only print its program name
  * Return: 0.
@@ -12,7 +12,7 @@ int chg(int c);
 int  main(int argc, char *argv[])
 {
 	int cents;
-	int res;
+	unsigned int res;
 
 	if (argc != 2)
 	{
@@ -36,42 +36,19 @@ int  main(int argc, char *argv[])
  * @c: money
  *
  */
-int chg(int c)
+unsigned int chg(unsigned int c)
 {
-	int a = 0;
-
-	while (c)
-	{
-		if (c % 25 == 0)
-		{
-			c -= 25;
-			a++;
-			continue;
-		}
-		if (c % 10 == 0)
-		{
-			c -= 10;
-			a++;
-			continue;
-		}
-		if (c % 5 == 0)
-		{
-			c -= 5;
-			a++;
-			continue;
-		}
-		if (c % 2 == 0)
-		{
-			c -= 2;
-			a++;
-			continue;
-		}
-		if (c % 1 == 0)
-		{
-			c--;
-			a++;
-			continue;
-		}
-	}
-	return (a);
+	if (c == 0)
+		return (0);
+	if (c % 25 == 0)
+		return ((c / 25));
+	if (c % 10 == 0)
+		return ((c / 10));
+	if (c % 5 == 0)
+		return (1 + chg(c - 5));
+	if (c % 2 == 0)
+		return (1 + chg(c - 2));
+	if (c % 1 == 0)
+		return (1 + chg(c - 1));
+	return (0);
 }
