@@ -16,11 +16,10 @@ char *_strdup(char *str)
 	{
 		for (; *(str + aux); aux++)
 			;
-		void *p = malloc(sizeof(char) * aux);
+		strcpy = (void *)malloc(sizeof(char) * aux);
 
-		if (p)
+		if (strcpy)
 		{
-			strcpy = (char *)p;
 			for (; aux >= 0; aux--)
 				*(strcpy + aux) = *(str + aux);
 		}
