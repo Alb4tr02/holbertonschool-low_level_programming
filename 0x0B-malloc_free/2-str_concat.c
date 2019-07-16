@@ -23,7 +23,7 @@ char *str_concat(char *s1, char *s2)
 			;
 		for (; *(s2 + aux2); aux2++)
 			;
-		strcpy = (void *)malloc(sizeof(char) * (aux1 + aux2 - 1));
+		strcpy = (void *)malloc(sizeof(char) * (aux1 + aux2 + 1));
 
 		if (strcpy)
 		{
