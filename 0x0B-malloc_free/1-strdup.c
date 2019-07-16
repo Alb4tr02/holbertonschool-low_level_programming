@@ -16,7 +16,7 @@ char *_strdup(char *str)
 	{
 		for (; *(str + aux); aux++)
 			;
-		strcpy = (void *)malloc(sizeof(char) * aux);
+		strcpy = (void *)malloc(sizeof(char) * (aux + 1));
 
 		if (strcpy)
 		{
