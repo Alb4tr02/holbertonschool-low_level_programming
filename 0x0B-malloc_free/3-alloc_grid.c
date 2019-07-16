@@ -5,7 +5,7 @@
  * to a 2 dimensional array of integers.
  * Return: pointer to the array
  * @width: matrix  width
- * @heigth: matrix heigth
+ * @height: matrix heigth
  */
 int **alloc_grid(int width, int height)
 {
