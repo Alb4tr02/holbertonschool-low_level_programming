@@ -1,18 +1,22 @@
-#include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include "holberton.h"
 /**
- * free_grid - function that function that frees a 2 dimensional
- * grid previously created
- * to a 2 dimensional array of integers.
- * @grid: pointer to the matrix
- * @height: matrix heigth
+ * free_grid -is a function that returns a pointer to a 2 dimensional
+ * array of integers.
+ * @grid: matrix.
+ * @height: heigth of the matrix.
  */
 void free_grid(int **grid, int height)
 {
 	int i;
 
-	for (i = 0; i < height; i++)
-		free(*(grid + i));
+	if (grid != 0)
+	{
+		for (i = 0; i < height; i++)
+			free(grid[i]);
+	}
+	else
+	{
+	}
 	free(grid);
 }
