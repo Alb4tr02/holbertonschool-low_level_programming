@@ -24,7 +24,10 @@ int **alloc_grid(int width, int height)
 			if (p)
 				*(m + i) = p;
 			else
-				return (NULL);
+			{
+				m = NULL;
+				return (m);
+			}
 		}
 		for (i = 0; i < height; i++)
 		{
