@@ -123,12 +123,17 @@ char **strtow(char *str)
 		return (NULL);
 	m = (char **) malloc((sizeof(char *) * words) + 1);
 	if (m == NULL)
+	{
+		for (words = words - 1; words >= 0; words--)
+			free(*(m + words));
+		free(m);
 		return (NULL);
-
+	}
 	pos = (int *)malloc(sizeof(int) * words * 2);
 	if (pos == NULL)
 	{
 		free(m);
+		free(pos);
 		return (NULL);
 	}
 	look_pos(str, pos);
