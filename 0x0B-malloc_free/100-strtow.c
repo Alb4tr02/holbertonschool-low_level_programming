@@ -119,6 +119,8 @@ char **strtow(char *str)
 	if (str == NULL || *str == 0)
 		return (NULL);
 	words = count_words(str);
+	if (words == 0)
+		return (NULL);
 	m = (char **) malloc((sizeof(char *) * words) + 1);
 	if (m == NULL)
 		return (NULL);
