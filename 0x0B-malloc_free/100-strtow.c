@@ -75,10 +75,8 @@ void look_pos(char *str, int *pos)
  */
 char **strtow(char *str)
 {
-	int words = 0;
-	int b = 0;
+	int words, b, l;
 	int b1 = 0;
-	int l = 0;
 	char **m = NULL;
 	int *pos = NULL;
 
@@ -91,7 +89,10 @@ char **strtow(char *str)
 
 	pos = (int *)malloc(sizeof(int) * words * 2);
 	if (pos == NULL)
+	{
+		free(m);
 		return (NULL);
+	}
 	look_pos(str, pos);
 
 
@@ -103,7 +104,7 @@ char **strtow(char *str)
 		*(m + b) = (char *)malloc(sizeof(char) * (sz));
 		if (*(m + b) == NULL)
 		{
-			for (b = b - 1; b >=0; b--)
+			for (b = b - 1; b >= 0; b--)
 				free(*(m + b));
 			free(m);
 			free(pos);
