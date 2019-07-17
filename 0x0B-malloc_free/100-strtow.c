@@ -82,12 +82,16 @@ char **strtow(char *str)
 	char **m = NULL;
 	int *pos = NULL;
 
+	if (str == NULL || *str == 0)
+		return (NULL);
 	words = count_words(str);
 	m = (char **) malloc((sizeof(char *) * words) + 1);
-
+	if (m == NULL)
+		return (NULL);
 
 	pos = (int *)malloc(sizeof(int) * words * 2);
-
+	if (pos == NULL)
+		return (NULL);
 	look_pos(str, pos);
 
 
@@ -97,7 +101,14 @@ char **strtow(char *str)
 		int p2 = *(pos + b1 + 1);
 		int sz = p2 - p1 + 2;
 		*(m + b) = (char *)malloc(sizeof(char) * (sz));
-
+		if (*(m + b) == NULL)
+		{
+			for (b = b - 1; b >=0; b--)
+				free(*(m + b));
+			free(m);
+			free(pos);
+			return (NULL);
+		}
 		for (l = 0; l < sz - 1; l++, p1++)
 			*(*(m + b) + l) = *(str + p1);
 		*(*(m + b) + l) = '\0';
