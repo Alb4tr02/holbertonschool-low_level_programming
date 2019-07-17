@@ -77,19 +77,19 @@ char **strtow(char *str)
 {
 	int words = 0;
 	int b = 0;
+	int b1 = 0;
 	int l = 0;
 	char **m = NULL;
+	int *pos = NULL;
 
 	words = count_words(str);
 	m = (char **) malloc((sizeof(char *) * words) + 1);
 
-	int *pos = NULL;
 
 	pos = (int *)malloc(sizeof(int) * words * 2);
 
 	look_pos(str, pos);
 
-	int b1 = 0;
 
 	for (b = 0; b < words; b++)
 	{
