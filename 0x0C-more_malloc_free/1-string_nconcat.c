@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -13,18 +14,25 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *p;
 	unsigned int naux;
 	unsigned int i, j;
+	int l1 = 0;
+	int l2 = 0;
 
 	if (s1 == NULL)
 		*s1 = 0;
 	if (s2 == NULL)
 		*s2 = 0;
-	naux = sizeof(s2);
-
+	for (; *(s1 + l1); l1++)
+		;
+	for (; *(s2 + l2); l2++)
+		;
+	l1++;
+	l2++;
+	naux = l2;
 	if (n >= naux)
-		p = (char *)malloc(sizeof(s1) + naux - 1);
+		p = (char *)malloc(l1 + naux - 1);
 	else
 	{
-		p = malloc(sizeof(s1) + n);
+		p = malloc(sizeof(l1 + n));
 		naux = n;
 	}
 	if (!p)
@@ -35,7 +43,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	j = 0;
 	for (; *(s2 + j) && (j < naux); j++, i++)
 		*(p + i) = *(s2 + j);
-	if (*(s2 + j))
+	if (*(s2 + j) != 0)
 		*(p + i) = 0;
 	else
 		*(p + i) = *(s2 + j);
