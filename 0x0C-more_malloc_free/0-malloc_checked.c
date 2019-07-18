@@ -13,7 +13,7 @@ void *malloc_checked(unsigned int b)
 
 	p = malloc(b);
 
-	if (p)
+	if (!p)
 		exit(98);
 	return (p);
 }
