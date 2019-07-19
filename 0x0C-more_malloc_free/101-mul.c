@@ -94,6 +94,11 @@ void check_digit(char *p1, char *p2)
 		printf("Error\n");
 		exit(98);
 	}
+	if (*p1 == '0' || *p2 == '0')
+	{
+		printf("0\n");
+		exit(0);
+	}
 }
 
 /**
