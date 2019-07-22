@@ -27,8 +27,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (!(n && o))
 	{
-		free(n);
-		free(o);
+		if (!o && n)
+			free(n);
 		free(zira);
 		return (NULL);
 	}
