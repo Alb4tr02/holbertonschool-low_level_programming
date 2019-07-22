@@ -25,8 +25,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 	n = (char *)malloc(sizeof(a));
 	o = (char *)malloc(sizeof(b));
 
-	if (!(a && b))
+	if (!(n && o))
+	{
+		free(n);
+		free(o);
+		free(zira);
 		return (NULL);
+	}
 	for (; a >= 0; a--)
 		*(n + a) = *(name + a);
 	for (; b >= 0; b--)
