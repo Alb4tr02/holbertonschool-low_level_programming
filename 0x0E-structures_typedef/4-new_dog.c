@@ -22,8 +22,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		;
 	for (; *(owner + b); b++)
 		;
-	n = (char *)malloc(a + 1);
-	o = (char *)malloc(b + 1);
+	n = (char *)malloc(sizeof(char) * (a + 1));
+	o = (char *)malloc(sizeof(char) * (b + 1));
 
 	if (!(n && o))
 	{
@@ -35,7 +35,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	for (; a >= 0; a--)
 		*(n + a) = *(name + a);
 	for (; b >= 0; b--)
-		*(o + a) = *(owner + b);
+		*(o + b) = *(owner + b);
 	zira->name = n;
 	zira->age = age;
 	zira->owner = o;
