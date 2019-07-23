@@ -22,8 +22,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		;
 	for (; *(owner + b); b++)
 		;
-	n = (char *)malloc(sizeof(a));
-	o = (char *)malloc(sizeof(b));
+	n = (char *)malloc(sizeof(a + 1));
+	o = (char *)malloc(sizeof(b + 1));
 
 	if (!(n && o))
 	{
