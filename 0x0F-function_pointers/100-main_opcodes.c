@@ -28,7 +28,13 @@ int main(int argc, char *argv[])
 	else
 	{
 		while (nb-- > 1 && cont++)
+		{
+			if ((*((char *)(ptr_main + cont - 2)) & n) < 15)
+				printf("0");
 			printf("%x ", *((char *)(ptr_main + cont - 2)) & n);
+		}
+		if ((*((char *)(ptr_main + cont - 1)) & n) < 15)
+			printf("0");
 		printf("%x\n", *((char *)(ptr_main + cont - 1)) & n);
 	}
 	return (0);
