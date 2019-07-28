@@ -33,7 +33,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("(nil)%s", sep);
 	}
 	p = va_arg(args, char *);
-	if (va_arg(args, char *))
+	if (p)
 		printf("%s\n", p);
 	else
 		printf("(nil)\n");
