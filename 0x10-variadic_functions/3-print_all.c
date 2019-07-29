@@ -50,7 +50,7 @@ void print_string(va_list list)
 
 void print_all(const char * const format, ...)
 {
-	int i = 0, j = -1;
+	int i = 0, j = 0;
 	va_list list;
 	char *sep = "";
 	op_t fun[] = {
@@ -63,7 +63,7 @@ void print_all(const char * const format, ...)
 	va_start(list, format);
 	while (format && *(format + i))
 	{
-		while (++j < 4)
+		while (j < 4)
 		{
 			if (fun[j].op[0] == *(format + i))
 			{
@@ -72,6 +72,7 @@ void print_all(const char * const format, ...)
 				sep = ", ";
 				break;
 			}
+			j++;
 		}
 		j  = 0;
 		i++;
