@@ -13,6 +13,7 @@ size_t list_len(const list_t *h)
 	if (h)
 	{
 		list_t *cpyh = h->next;
+
 		for (cont = 1; cpyh != NULL; cont++)
 			cpyh = cpyh->next;
 	}
