@@ -1,5 +1,12 @@
 #include "lists.h"
 #include <stdlib.h>
+
+typedef struct listn_s
+{
+	listint_t *node;
+	struct listn_s *next;
+} listn_t;
+
 /**
  * add_n - function that add a node at the beginning
  * @head: pointer to the first node.

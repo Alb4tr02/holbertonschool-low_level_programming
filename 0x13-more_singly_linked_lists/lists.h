@@ -15,19 +15,6 @@ typedef struct listint_s
 	int n;
 	struct listint_s *next;
 } listint_t;
-/**
- * struct listn_s - singly linked list
- * @node: node printed
- * @next: points to the next node
- *
- * Description: singly linked list node structure
- */
-typedef struct listn_s
-{
-	listint_t *node;
-	struct listn_s *next;
-} listn_t;
-
 /************************************************/
 /***************** FUNCIONES ********************/
 size_t print_listint(const listint_t *h);
