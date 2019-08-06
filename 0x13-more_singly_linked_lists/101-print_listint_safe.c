@@ -63,7 +63,7 @@ size_t print_listint_safe(const listint_t *head)
 		{
 			if (find(list, cpy) || (cpy == head))
 			{
-				printf("->[%p] %d\n", (void *)cpy, cpy->n);
+				printf("-> [%p] %d\n", (void *)cpy, cpy->n);
 				exit(98);
 			}
 			else
