@@ -19,7 +19,9 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		new->n = n;
 		for (; hcpy && (idx > 1); idx--)
 			hcpy = hcpy->next;
-		if (hcpy == *head)
+		if (idx > 1)
+			return (NULL);
+		if (idx == 0)
 		{
 			new->next = *head;
 			*head = new;
