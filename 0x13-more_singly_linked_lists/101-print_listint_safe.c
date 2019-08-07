@@ -37,6 +37,8 @@ void add_n(listn_t **head, listint_t *node)
 			new->next = NULL;
 		*head = new;
 	}
+	else
+		exit(98);
 }
 /**
  * find - function that check if a node was printed previously
@@ -81,7 +83,7 @@ size_t print_listint_safe(const listint_t *head)
 			if (find(list, cpy) || (cpy == head))
 			{
 				printf("-> [%p] %d\n", (void *)cpy, cpy->n);
-				exit(98);
+				break;
 			}
 			else
 			{
