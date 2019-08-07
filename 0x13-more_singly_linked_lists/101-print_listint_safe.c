@@ -73,10 +73,10 @@ size_t print_listint_safe(const listint_t *head)
 	listint_t *cpy;
 
 	list = NULL;
-	cpy = head->next;
 
 	if (head)
 	{
+		cpy = head->next;
 		printf("[%p] %d\n", (void *)head, head->n);
 		cont++;
 		while (cpy)
