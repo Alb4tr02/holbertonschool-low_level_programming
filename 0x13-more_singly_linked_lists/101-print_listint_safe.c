@@ -1,20 +1,20 @@
 #include "lists.h"
 #include <stdlib.h>
 /**
- * add_n - function that add a node at the beginning
+ * free_list - function that frees the list
  * @head: pointer to the first node.
- * @node: node to be added
  * Return: nothing
  */
-void free_list(listn_t *head)
+void free_list(listn_t **head)
 {
-	listn_t *cpy = head;
 
-	while (cpy)
+	listn_t *cpy;
+
+	while (head && *head)
 	{
-		free(cpy);
-		cpy = head->next;
-		head = head->next;
+		cpy = (*head)->next;
+		free(*head);
+		*head = cpy;
 	}
 }
 /**
@@ -91,7 +91,7 @@ size_t print_listint_safe(const listint_t *head)
 			add_n(&list, cpy);
 			cpy = cpy->next;
 		}
+		free_list(&list);
 	}
-	free_list(list);
 	return (cont);
 }
