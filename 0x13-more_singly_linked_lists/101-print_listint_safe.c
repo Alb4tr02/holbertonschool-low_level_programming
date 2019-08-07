@@ -38,7 +38,10 @@ void add_n(listn_t **head, listint_t *node)
 		*head = new;
 	}
 	else
+	{
+		free_list(head);
 		exit(98);
+	}
 }
 /**
  * find - function that check if a node was printed previously
