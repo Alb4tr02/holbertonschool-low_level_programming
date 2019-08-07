@@ -10,18 +10,15 @@ listint_t *find_listint_loop(listint_t *head)
 {
 	if (head)
 	{
-		listint_t e;
-		listint_t c;
+		listint_t e, c;
 
-		for (c.n = 1, e.next = head->next; e.next; c.n = c.n + 1)
+		for (c.n = 1, e.next = head->next; e.next; c.n++, head = c.next)
 		{
-			c.next = head;
-			for (e.n = 0; head != e.next; e.n = e.n + 1)
+			for (e.n = 0, c.next = head; head != e.next; e.n++)
 				head = head->next;
 			if (e.n != c.n)
 				return (head);
 			e.next = head->next;
-			head = c.next;
 		}
 	}
 	return (NULL);
