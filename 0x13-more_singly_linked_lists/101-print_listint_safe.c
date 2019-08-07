@@ -24,7 +24,7 @@ void free_list(listn_t **head)
  * Return: nothing
  */
 
-void add_n(listn_t **head, listint_t *node)
+int add_n(listn_t **head, listint_t *node)
 {
 	listn_t *new = malloc(sizeof(listn_t));
 
@@ -38,10 +38,8 @@ void add_n(listn_t **head, listint_t *node)
 		*head = new;
 	}
 	else
-	{
-		free_list(head);
-		exit(98);
-	}
+		return (0);
+	return (1);
 }
 /**
  * find - function that check if a node was printed previously
@@ -93,7 +91,11 @@ size_t print_listint_safe(const listint_t *head)
 				printf("[%p] %d\n", (void *)cpy, cpy->n);
 				cont++;
 			}
-			add_n(&list, cpy);
+			if (add_n(&list, cpy) == 0)
+			{
+				free_list(&list);
+				exit(98);
+			}
 			cpy = cpy->next;
 		}
 		free_list(&list);
