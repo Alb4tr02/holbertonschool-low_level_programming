@@ -6,15 +6,15 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned int flag = 0, i = 0, a = 1, p;
+	unsigned long int flag = 0, i = 0, a = 1, p;
 
-	for (; i < 32; i++)
+	for (; i < 64; i++)
 	{
-		p = ((a << (31 - i)) & n);
-		if (p >> (31 - i))
+		p = ((a << (63 - i)) & n);
+		if (p >> (63 - i))
 			flag = 1;
 		if (flag)
-			_putchar((p >> (31 - i)) + 48);
+			_putchar((p >> (63 - i)) + 48);
 	}
 	if (!n)
 		_putchar('0');
