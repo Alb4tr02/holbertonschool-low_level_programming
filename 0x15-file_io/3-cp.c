@@ -44,7 +44,7 @@ error99:
 		if (a == -1)
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f);
 		if (b == -1)
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f);
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", t);
 		exit(100);
 	}
 }
