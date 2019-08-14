@@ -32,8 +32,9 @@ error99:
 	while (n_read == LIM)
 	{
 		n_read = read(f, buf, LIM);
+		if (n_read)
+			goto error98;
 		n_write = write(t, buf, n_read);
-
 		if (n_write != n_read)
 			goto error99;
 	}
