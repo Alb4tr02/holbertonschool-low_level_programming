@@ -29,10 +29,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 		if (n_write != n_read)
 		{
-			free(p);
 			close(fd);
+			free(p);
 			return (0);
 		}
+		close(fd);
+		free(p);
 		return (n_write);
 	}
 	return (0);
