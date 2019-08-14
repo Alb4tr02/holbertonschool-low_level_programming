@@ -19,10 +19,8 @@ error98:
 		exit(98);
 	}
 	f = open(fr, O_RDONLY, 0400);
-	t = open(to, O_WRONLY | O_TRUNC);
+	t = open(to, O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 
-	if (t == -1)
-		t = open(to, O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	if (f == -1)
 		goto error98;
 	if (t == -1)
@@ -46,7 +44,7 @@ error99:
 		if (a == -1)
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f);
 		if (b == -1)
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", t);
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f);
 		exit(100);
 	}
 }
