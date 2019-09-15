@@ -39,6 +39,7 @@ size_t print_dlistint(const dlistint_t *h)
 	size_t b = 0;
 
 	print_untilhead(h, &a);
-	print_untiltail(h->next, &b);
+	if (h)
+		print_untiltail(h->next, &b);
 	return (a + b);
 }
