@@ -55,18 +55,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		cpy = *h;
 		for (; idx > 0 && cpy; idx--)
 			cpy = cpy->next;
-		if (idx == 0)
+		if (idx == 0 && cpy)
 		{
-			if (!cpy)
-			{
-				free(new);
-				return (_add_dnodeint_end(h, n));
-			}
 			new->n = n;
 			new->prev = cpy->prev;
 			new->next =  cpy;
 			(cpy->prev)->next = new;
 			cpy->prev = new;
+			return (new);
 		}
 		if (idx != 0)
 			free(new);
