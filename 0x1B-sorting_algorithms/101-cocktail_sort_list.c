@@ -125,15 +125,17 @@ void cocktail_sort_list(listint_t **list)
 	if (!list || !(*list))
 		return;
 	st = cuba_libre(list, *list, NULL);
-	sta = st;
 	if (!st)
 		return;
 	end = mojito(list, st, NULL);
 	while (1)
 	{
-		if (!st && !end)
+		if (!end)
 			return;
-		st = cuba_libre(list, *list, NULL);
-		end = mojito(list, sta, NULL);
+		st = cuba_libre(list, end, st);
+		if (st)
+			end = mojito(list, st, end);
+		else
+			return;
 	}
 }
