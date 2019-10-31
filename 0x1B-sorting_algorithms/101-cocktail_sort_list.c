@@ -130,9 +130,10 @@ void cocktail_sort_list(listint_t **list)
 	end = mojito(list, st, NULL);
 	while (1)
 	{
-		if (!end)
-			return;
-		st = cuba_libre(list, end, st);
+		if (end)
+			st = cuba_libre(list, end, st);
+		else
+			st = cuba_libre(list, *list, NULL);
 		if (st)
 			end = mojito(list, st, end);
 		else
