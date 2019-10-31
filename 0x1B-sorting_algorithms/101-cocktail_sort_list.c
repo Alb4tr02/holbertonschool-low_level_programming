@@ -120,21 +120,20 @@ listint_t *mojito(listint_t **list, listint_t *start, listint_t *end)
  */
 void cocktail_sort_list(listint_t **list)
 {
-	listint_t *st, *end;
+	listint_t *st, *end, *sta;
 
 	if (!list || !(*list))
 		return;
 	st = cuba_libre(list, *list, NULL);
 	if (!st)
 		return;
+	sta = st;
 	end = mojito(list, st, NULL);
 	while (1)
 	{
-		if (!end)
+		st = cuba_libre(list, *list, NULL);
+		end = mojito(list, sta, NULL);
+		if (!st && !end)
 			return;
-		st = cuba_libre(list, end, st);
-		if (!st)
-			return;
-		end = mojito(list, st, end);
 	}
 }
