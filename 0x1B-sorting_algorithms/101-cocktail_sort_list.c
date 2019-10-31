@@ -120,7 +120,7 @@ listint_t *mojito(listint_t **list, listint_t *start, listint_t *end)
  */
 void cocktail_sort_list(listint_t **list)
 {
-	listint_t *st, *end, *sta;
+	listint_t *st, *end;
 
 	if (!list || !(*list))
 		return;
