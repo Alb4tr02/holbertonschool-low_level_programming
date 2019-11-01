@@ -133,7 +133,7 @@ void cocktail_sort_list(listint_t **list)
 		else
 			st = cuba_libre(list, *list, NULL);
 		if (st)
-			end = mojito(list, st, end);
+			end = mojito(list, st, NULL);
 		else
 			return;
 	}
