@@ -9,9 +9,7 @@
  */
 void shake(listint_t **list, listint_t *i, int mode)
 {
-	listint_t *r;
-	listint_t *l;
-	listint_t *aux;
+	listint_t *r, *l, *aux;
 
 	r = i->next;
 	l = i->prev;
