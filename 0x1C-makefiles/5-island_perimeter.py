@@ -6,10 +6,11 @@
 
 def island_perimeter(grid):
     """ 5 island """
-    st, a = "", 0
+    s, a, b, c = "", 0, 0, len(grid[0])
     for row in grid:
-        st += ''.join([str(elem) for elem in row])
-    for i in range(len(st) - 1):
-        a = a + 1 if (st[i] == '0' and st[i + 1] == '1') or\
-            (st[i] == '1' and st[i + 1] == '0') else a
-    return a * 2 if a % 2 == 0 else (a * 2) - 1
+        s, b = s + ''.join([str(elem) for elem in row]), b + 1
+    for i in range(len(s) - 1):
+        a += 1 if (s[i] == '0' and (s[i - 1] == '1' or s[i + 1] == '1')) else 0
+    for i in range(c, c*(b - 1), 1):
+        a += 1 if (s[i] == '1' and (s[i + c] == '0' or s[i - c] == '0')) else 0
+    return a
