@@ -1,0 +1,5 @@
+sc=main.c holberton.c
+h=m.h
+cc=gcc
+all: 	$(sc)
+	$(cc) $(sc) -o holberton
