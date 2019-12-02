@@ -1,5 +1,5 @@
-#ifndef _SORTH_
-#define _SORTH_
+#ifndef  _BINARY_TREES_H_
+#define  _BINARY_TREES_H_
 #include <stddef.h>
 /**
  * struct binary_tree_s - Binary tree node
@@ -60,4 +60,5 @@ heap_t *heap_insert(heap_t **root, int value);
 heap_t *array_to_heap(int *array, size_t size);
 int heap_extract(heap_t **root);
 int *heap_to_sorted_array(heap_t *heap, size_t *size);
+void binary_tree_print(const binary_tree_t *);
 #endif
