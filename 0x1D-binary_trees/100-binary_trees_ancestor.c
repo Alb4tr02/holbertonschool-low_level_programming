@@ -1,11 +1,23 @@
 #include "binary_trees.h"
-#include <stdio.h>
+/**
+ * up - function that moves up on the tree
+ * @w: pointer to the walker node
+ * @t: pinter to the top node
+ * Return: 1 if w is equal to t
+ */
 int up(const binary_tree_t *w, const binary_tree_t *t)
 {
 	while (w && (w != t))
 		w = w->parent;
 	return ((w == t) ? 1 : 0);
 }
+/**
+ * binary_trees_ancestor - function that finds the lowest common ancestor of
+ *                         two nodes
+ * @first: pointer to the first node
+ * @second: pointer to the second node
+ * Return: pointer to the lowest common ancestor.
+ */
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 				     const binary_tree_t *second)
 {
