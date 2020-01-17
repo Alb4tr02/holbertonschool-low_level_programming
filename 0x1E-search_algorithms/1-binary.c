@@ -30,7 +30,7 @@ int binary_search(int *array, size_t size, int value)
 
 	if (!array)
 		return (-1);
-	for (p(array, l, r); l < r; m = (l + r) / 2, p(array, l, r))
+	for (p(array, l, r); l <= r; m = (l + r) / 2, p(array, l, r))
 	{
 		if (value == array[m])
 			return ((int) m);
