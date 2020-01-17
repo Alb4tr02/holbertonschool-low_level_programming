@@ -11,6 +11,8 @@ void p(int *array, size_t start, size_t end)
 {
 	char *sp;
 
+	if (start > end)
+		return;
 	printf("Searching in array: ");
 	for (sp = ""; start <= end; start++, sp = ", ")
 		printf("%s%d", sp, array[start]);
