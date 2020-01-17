@@ -26,12 +26,11 @@ void p(int *array, size_t start, size_t end)
  */
 int binary_search(int *array, size_t size, int value)
 {
-	size_t m, l, r = 0;
+	size_t l = 0, r = size - 1, m  = (l + r) / 2;
 
 	if (!array)
 		return (-1);
-	for (l = 0, r = size - 1, p(array, l, r), m = (l + r) / 2; l < r;
-	     m = (l + r) / 2, p(array, l, r))
+	for (p(array, l, r); l < r; m = (l + r) / 2, p(array, l, r))
 	{
 		if (value == array[m])
 			return ((int) m);
